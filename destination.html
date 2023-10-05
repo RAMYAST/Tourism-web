@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADDITIONAL PLACES</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: fixed;
+        
+            background-image: url('desi.jpg');        }
+        header {
+            background-color:yellowgreen;
+            color: #fff;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            padding: 1rem;
+        
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 30px;
+        
+        }
+        .destination-card {
+            border: 3px solid beige;
+            margin-bottom: 20px;
+            padding: 10px;
+        
+            border-radius: 30px;
+            background-image: url('MUNNAR.JPG');
+        
+        }
+        .destination-card h2 {
+            margin-top: 0;
+        }
+        h2{
+            text-align: center;
+
+        }
+        
+
+        p{
+            font-size: large;
+            text-align: center;
+            font-style: italic;
+            font-weight: lighter;
+            background-color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            justify-content: space-evenly;
+            text-transform: capitalize;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+    
+        }
+        button{
+            border-radius: 20px;
+            border-color:black;
+            font-size:15px;
+            cursor: pointer;
+            border-width: 3px;
+            padding: 10px;
+        
+        
+        }
+        button:hover{
+            background-color: chocolate;
+
+        }
+        
+        h1{
+            text-align: center;
+        
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ADDITIONAL PLACES TO VISIT</h1>
+    </header>
+    <div class="container">
+        <h1>Popular Destinations</h1><br>
+        
+        <div class="destination-card">
+            <h2>COORG<h2>
+            <p>Nature lover's paradise</p>
+            <button onclick="showDetails('coorg')">Click here & move down</button>
+        </div>
+        <div class="destination-card">
+            <h2>YERCAUD<h2>
+            <p>Variety of species , Tea and sites</p>
+            <button onclick="showDetails('yercaud')">Click here & move down</button>
+        </div>
+        <div class="destination-card">
+            <h2>GOKARNA<h2>
+            <p>Hindu pilgrimage site in KARNATAKA</p>
+            <button onclick="showDetails('gokarna')">Click here & move down</button>
+        </div><br><br>
+        <div id="destination-details" style="display: none;">
+            <h2 id="destination-title"></h2>
+            <p id="destination-description"></p>
+            <button  onclick="hideDetails()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function showDetails(destination) {
+            const detailsDiv = document.getElementById('destination-details');
+            const titleElement = document.getElementById('destination-title');
+            const descriptionElement = document.getElementById('destination-description');
+
+            switch (destination) {
+                case 'coorg':
+                    titleElement.textContent = 'COORG';
+                    descriptionElement.textContent = 'This small town in Karnataka is best known for its diverse flora and fauna and aromatic spices and coffee plantations. From waterfalls and trekking routes to forts and temples, there’s plenty to explore in Coorg.';
+                    break;
+                case 'yercaud':
+                    titleElement.textContent = 'YERCAUD';
+                    descriptionElement.textContent = 'The Yercaud Lake is undoubtedly one of the best places to visit in Yercaud. Providing stunning, panoramic views of the hills and lush green lawns of this hill station, this Lake also barges out as one of the most sought after destinations in Yercaud.';
+                    break;
+                case 'gokarna':
+                    titleElement.textContent = 'GOKARNA';
+                    descriptionElement.textContent = 'Gokarna best known for its beautiful beaches with white sand and swaying coconut palms. Apart from the beaches, Gokarna has a number of old and new temples. It is considered one of the popular tourist places for solo travelers in South India. ';
+                    break;
+            }
+
+            detailsDiv.style.display = 'block';
+        }
+
+        function hideDetails() {
+            const detailsDiv = document.getElementById('destination-details');
+            detailsDiv.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
